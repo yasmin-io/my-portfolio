@@ -1,11 +1,17 @@
 import React from "react";
-// Here we are importing a CSS file as a dependency
-// import "../styles/Header.css";
+import Logo from "../images/IMG_1961.png";
+import Navbar from "./navbar";
 
 function Header() {
   return (
     <header className="header">
-      <h1>Home</h1>
+      <Navbar />
+      <img
+        style={{ maxHeight: "200px" }}
+        className="logo"
+        src={Logo}
+        alt="yasmin"
+      />
     </header>
   );
 }
