@@ -1,13 +1,16 @@
 import React from "react";
+import "./styles/fonts";
 import Header from "./components/header";
+import Home from "./pages/Home";
 
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      <title>Yasmin Portfolio</title>
       <Header />
-      <p>Home Page</p>
+      <Home />
     </div>
   );
 }
