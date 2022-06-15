@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/fonts";
+import "../styles/fonts";
 
 const Home = () => {
   return (
