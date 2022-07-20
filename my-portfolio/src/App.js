@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/fonts";
+
 import Header from "./components/header";
 import Home from "./pages/Home";
 
