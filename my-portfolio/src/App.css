@@ -1,25 +1,59 @@
+/* Adding a custom font */
+
+/* Old English Style */
+@font-face {
+  font-family: "Cloister";
+  src: url("./assets/fonts/CloisterBlack-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Default CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  background-color: #eeedec !important;
+  color: black;
+  font-family: sans-serif;
+}
+
 .App {
   text-align: center;
-  background-color: #eeedec;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Navbar CSS */
+nav.navbar {
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  transition: 0.33 ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+nav.navbar.scrolled {
+  padding: 0px 0;
+  background-color: black;
 }

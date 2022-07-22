@@ -1,7 +1,7 @@
 import React from "react";
-
-import Header from "./components/header";
-import Home from "./pages/Home";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./components/navbar";
 
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -9,8 +9,7 @@ function App() {
   return (
     <div className="App">
       <title>Yasmin Portfolio</title>
-      <Header />
-      <Home />
+      <NavBar />
     </div>
   );
 }
