@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import Logo from "../assets/images/IMG_1961.png";
+import Logo from "../assets/images/logo.png";
 
 function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -35,64 +35,53 @@ function NavBar() {
   };
 
   return (
-    <>
-      <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
-        <Container>
-          <Navbar.Brand href="#home">
-            <img
-              style={{ maxHeight: "200px" }}
-              className="logo"
-              src={Logo}
-              alt="yasmi logo"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link
-                href="#home"
-                className={
-                  activeLink === "home" ? "active-navbar-link" : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("home")}
-              >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                href="#about-me"
-                className={
-                  activeLink === "about-me"
-                    ? "active-navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("about-me")}
-              >
-                About Me
-              </Nav.Link>
-              <Nav.Link
-                href="#projects"
-                className={
-                  activeLink === "projects"
-                    ? "active-navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("projects")}
-              >
-                Projects
-              </Nav.Link>
-            </Nav>
-            <span className="navba-text">
-              <button
-                className="cv-button"
-                onClick={() => console.log("download cv")}
-              >
-                CV Download
-              </button>
-            </span>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+      <Container>
+        <Navbar.Brand href="/">
+          <img style={{ maxHeight: "100px" }} src={Logo} alt="yasmin logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link
+              href="#home"
+              className={
+                activeLink === "home" ? "active-navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("home")}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="#about-me"
+              className={
+                activeLink === "about-me" ? "active-navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("about-me")}
+            >
+              About Me
+            </Nav.Link>
+            <Nav.Link
+              href="#projects"
+              className={
+                activeLink === "projects" ? "active-navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("projects")}
+            >
+              Projects
+            </Nav.Link>
+          </Nav>
+          <span className="navbar-text">
+            <button
+              className="cv-button"
+              onClick={() => console.log("download cv")}
+            >
+              Let's Connect
+            </button>
+          </span>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

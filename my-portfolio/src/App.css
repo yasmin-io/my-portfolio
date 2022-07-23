@@ -1,6 +1,4 @@
-/* Adding a custom font */
-
-/* Old English Style */
+/*---------------- Custom Fonts ----------------- */
 @font-face {
   font-family: "Cloister";
   src: url("./assets/fonts/CloisterBlack-Light.woff") format("woff");
@@ -9,7 +7,7 @@
   font-display: swap;
 }
 
-/* Default CSS */
+/*---------------- Default CSS ----------------- */
 * {
   margin: 0;
   padding: 0;
@@ -43,17 +41,46 @@ body {
   text-align: center;
 }
 
-/* Navbar CSS */
-nav.navbar {
-  padding: 18px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
-  transition: 0.33 ease-in-out;
-}
+/*----------------Navar CSS----------------- */
 
 nav.navbar.scrolled {
-  padding: 0px 0;
-  background-color: black;
+  background-color: #eeedec;
+}
+
+.navbar-text button {
+  font-weight: 700;
+  color: grey;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+/* Navbar Button CSS */
+.navbar-text button span {
+  z-index: 1;
+}
+.navbar-text button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: lightgray;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.navbar-text button:hover {
+  color: #121212;
+}
+.navbar-text button:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
