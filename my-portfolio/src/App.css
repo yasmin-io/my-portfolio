@@ -84,3 +84,7 @@ nav.navbar.scrolled {
   height: 100%;
   position: absolute;
 }
+
+.tagline-title {
+  font-family: "Cloister";
+}

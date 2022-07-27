@@ -62,13 +62,13 @@ function NavBar() {
               About Me
             </Nav.Link>
             <Nav.Link
-              href="#projects"
+              href="#my-work"
               className={
                 activeLink === "projects" ? "active-navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("projects")}
+              onClick={() => onUpdateActiveLink("my-work")}
             >
-              Projects
+              My Work
             </Nav.Link>
           </Nav>
           <span className="navbar-text">

@@ -7,14 +7,19 @@ import HeaderImg from "../assets/images/temporary-header.png";
 function Banner() {
   // This will indicate the index of the word being set on screen
   const [loopNum, setLoopNum] = useState(0);
+
   // Is the word being typed out or being deleted.
   const [isDeleting, setIsDeleting] = useState(false);
+
   // Words for the title rotation on the header
   const toRotate = ["Web Developer", "Web Deisgner", "Artist"];
+
   // What text is being displayed right now
   const [text, setText] = useState("");
+
   // How long it will take for each letter to be typed
-  const [letter, setletter] = useState(300 - Math.random() * 100);
+  const [letter, setLetter] = useState(300 - Math.random() * 100);
+
   // The time for the transition between each word being typed
   const period = 2000;
 
@@ -26,10 +31,36 @@ function Banner() {
     return () => {
       clearInterval(ticker);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
   const tick = () => {
+    //
     let i = loopNum % toRotate.length;
+    // The current index
+    let fullText = toRotate[i];
+
+    // -------------------------How does substring actually work here?
+    let updateText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
+
+    // Set the state to the updated text
+    setText(updateText);
+
+    // Alternating speed for each letter being revealed
+    if (isDeleting) {
+      setLetter((prevLetter) => prevLetter / 2);
+    }
+
+    if (isDeleting && updateText === fullText) {
+      setIsDeleting(true);
+      setLetter(period);
+    } else if (isDeleting && updateText === "") {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setLetter(500);
+    }
   };
 
   return (
@@ -52,7 +83,11 @@ function Banner() {
             </button>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={HeaderImg} alt="Skull Header" />
+            <img
+              style={{ maxHeight: "200px" }}
+              src={HeaderImg}
+              alt="Skull Header"
+            />
           </Col>
         </Row>
       </Container>
